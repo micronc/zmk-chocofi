@@ -67,6 +67,7 @@
                      &none    &to 0   &kp SPACE    &kp SPACE      &to 2         &to 0
             >;
             label="BLUETOOTH";
+            };
         };
     };
 };
