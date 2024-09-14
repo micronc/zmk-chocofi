@@ -1,60 +1,72 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+#include <dt-bindings/zmk/bt.h>
+
+#define DEFAULT 0
+#define NUMBERS 1
+#define NAVIGATION 2
+#define BLUETOOTH 3
+
 / {
+    chosen { zmk,matrix_transform = &five_column_transform; };
+
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+
+            quick-tap-ms = <200>;
+        };
+
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-
+        default_layer { // Layer 0
+            
             bindings = <
-&none  &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P     &none
-&none  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &none
-&none  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
-                     &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
+  &hm ESCAPE Q  &kp W  &kp E      &kp R   &kp T                 &kp Y      &kp U   &kp I                     &kp O    &hm BACKSPACE P
+  &kp A         &kp S  &kp D      &kp F   &kp G                 &kp H      &kp J   &kp K                     &kp L    &hm PIPE SQT
+  &kp Z         &kp X  &kp C      &kp V   &kp B                 &kp N      &kp M   &kp COMMA                 &kp DOT  &kp RET
+                &kp LCTRL  &to 1  &hm LEFT_ALT SPACE           &kp SPACE  &to 2  &hm LEFT_SHIFT BACKSPACE
             >;
+            label="DEFAULT"
         };
 
-        lower_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
+        numbers_layer { // Layer 1
+            
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N7     &kp N8  &kp N9    &kp MINUS     &kp DEL       &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp N4     &kp N5  &kp N6    &kp LS(PLUS)  &kp LS(STAR)  &kp DEL
-&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &kp N1     &kp N2  &kp N3    &kp DOT       &kp EQUAL     &kp RET
-                                        &kp LGUI      &trans        &kp SPACE       &kp SPACE  &kp N0  &kp RALT
+  &kp ESC    &none  &kp BSLH       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp N7     &kp N8  &kp N9  &kp MINUS  &kp BSPC
+  &kp TAB    &none  &hm LGUI E     &kp LBKT              &kp RBKT                 &kp N4     &kp N5  &kp N6  &kp PLUS   &kp DEL
+  &kp LSHFT  &none  &kp LS(LG(S))  &kp COMMA             &kp DOT                  &kp N1     &kp N2  &kp N3  &kp DOT    &kp RET
+                    &to 3         &to 0                &kp SPACE                &kp SPACE  &kp N0  &to 2
             >;
+            label="NUBERS"
         };
 
-        raise_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
+        navigation_layer { // Layer 2
 
             bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+  &kp ESCAPE  &none  &kp C_BRI_UP   &kp C_PLAY_PAUSE    &kp C_VOLUME_UP    &none      &none      &kp HOME  &kp END   &kp BSPC
+  &kp TAB     &none  &kp C_BRI_DEC  &kp C_FAST_FORWARD  &kp C_VOL_DN       &none      &kp PG_UP  &none     &kp UP    &kp RIGHT
+  &kp LSHFT   &none  &none          &kp C_REWIND        &kp K_MUTE         &none      &kp PG_DN  &kp LEFT  &kp DOWN  &kp RET
+                     &kp RET        &to 0              &kp SPACE          &kp SPACE  &to 1     &to 3
             >;
+            label="NAVIGATION"
+        };
+
+        bluetooth_layer { // Layer 3
+            bindings = <
+  &kp ESC    &kp F1  &kp F2   &kp F3   &kp F4       &kp F5         &kp F6         &kp F7         &kp F8         &kp BSPC
+  &kp TAB    &kp F9  &kp F10  &kp F11  &kp F12      &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &kp BSLH
+  &kp LSHFT  &none   &none    &none    &none        &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &kp RET
+                     &none    &to 0   &kp SPACE    &kp SPACE      &to 2         &to 0
+            >;
+            label="BLUETOOTH"
         };
     };
 };
