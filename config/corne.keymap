@@ -27,9 +27,9 @@
 
             default_layer {
                 bindings = <
-  &hm ESCAPE Q      &kp W  &kp E          &kp R  &kp T                 &kp Y      &kp U  &kp I      &kp O    &hm BACKSPACE P
-  &kp A             &kp S  &kp D          &kp F  &kp G                 &kp H      &kp J  &kp K      &kp L    &hm PIPE SQT
-  &hm LEFT_SHIFT Z  &kp X  &kp C          &kp V  &kp B                 &kp N      &kp M  &kp COMMA  &kp DOT  &hm FSLH RET
+  &hm ESCAPE Q      &kp W  &kp F          &kp P  &kp B                 &kp J      &kp L  &kp U      &kp Y    &kp SQT
+  &kp A             &kp R  &kp S          &kp T  &kp G                 &kp M      &kp N  &kp E      &kp I    &kp O
+  &hm LEFT_SHIFT Z  &kp X  &kp C          &kp D  &kp V                 &kp K      &kp H  &kp COMMA  &kp DOT  &hm FSLH RET
                            &hm LCTRL TAB  &mo 1  &hm LEFT_ALT SPACE    &kp SPACE  &to 2  &to 3
                 >;
 
@@ -41,7 +41,7 @@
   &kp ESC    &none  &kp BSLH       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp N7     &kp N8  &kp N9  &kp MINUS  &kp BSPC
   &kp TAB    &none  &hm LGUI E     &kp LBKT              &kp RBKT                 &kp N4     &kp N5  &kp N6  &kp PLUS   &kp DEL
   &kp LSHFT  &none  &kp LS(LG(S))  &kp COMMA             &kp DOT                  &kp N1     &kp N2  &kp N3  &kp DOT    &kp RET
-                    &to 3          &to 0                 &kp SPACE                &kp SPACE  &kp N0  &to 2
+                    &to 4          &to 0                 &kp SPACE                &kp SPACE  &kp N0  &to 2
                 >;
 
                 label = "NUBERS";
@@ -63,10 +63,21 @@
   &kp ESC    &kp F1  &kp F2   &kp F3   &kp F4       &bt BT_CLR_ALL  &none          &bt BT_PRV     &bt BT_NXT     &kp BSPC
   &kp TAB    &kp F5  &kp F6   &kp F7   &kp F8       &bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &kp BSLH
   &kp LSHFT  &kp F9  &kp F10  &kp F11  &kp F12      &bt BT_DISC 0   &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &kp RET
-                     &none    &to 0    &kp SPACE    &kp SPACE       &to 2          &to 0
+                     &none    &to 0    &kp SPACE    &kp SPACE       &to 2          &to 4
                 >;
 
                 label = "BLUTOOF";
+            };
+
+            Punctuations {
+                bindings = <
+  &kp LS(EXCL)   &kp LS(AT)    &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)    &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH
+  &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)   &kp LS(LPAR)  &kp LS(RPAR)     &kp LC(Z)  &none      &none     &kp SEMI  &kp SQT
+  &kp GRAVE      &none         &none          &none         &none            &none      &none      &none     &kp DOT   &kp FSLH
+                               &none          &to 0         &kp SPACE        &kp SPACE  &none      &none
+                >;
+
+                label = "PUNCS";
             };
         };
     };
