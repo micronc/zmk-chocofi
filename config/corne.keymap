@@ -30,7 +30,7 @@
                 bindings = <
   &hm ESCAPE Q      &kp W  &kp E               &kp R  &kp T        &kp Y      &kp U  &kp I      &kp O             &kp P
   &kp A             &kp S  &kp D               &kp F  &kp G        &kp H      &kp J  &kp K      &kp L             &hm PIPE SQT
-  &hm LEFT_SHIFT Z  &kp X  &kp C               &kp V  &kp B        &kp N      &kp M  &kp COMMA  &hm QUESTION DOT  &hm FSLH RET
+  &hm LEFT_SHIFT Z  &kp X  &kp C               &kp V  &kp B        &kp N      &kp M  &kp COMMA  &hm QUESTION DOT  &kp RETURN
                            &hm LCTRL LEFT_GUI  &mo 1  &kp SPACE    &kp SPACE  &mo 2  &to 3
                 >;
             };
@@ -39,7 +39,7 @@
                 bindings = <
   &kp ESC    &none  &kp BSLH         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp N7     &kp N8  &kp N9  &kp MINUS  &kp BSPC
   &kp TAB    &none  &hm LGUI E       &kp LBKT              &kp RBKT                 &kp N4     &kp N5  &kp N6  &kp PLUS   &kp DEL
-  &kp LSHFT  &none  &kp LS(LG(S))    &kp COMMA             &kp SEMICOLON            &kp N1     &kp N2  &kp N3  &kp DOT    &kp RET
+  &kp LSHFT  &none  &kp LS(LG(S))    &kp COMMA             &kp SEMICOLON            &kp N1     &kp N2  &kp N3  &kp DOT    &kp SLASH
                     &kp RIGHT_SHIFT  &trans                &kp LCTRL                &kp SPACE  &kp N0  &to 2
                 >;
 
