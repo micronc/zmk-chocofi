@@ -39,7 +39,7 @@
                 bindings = <
   &kp ESC  &none           &kp BSLH         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp N7     &kp N8  &kp N9  &kp MINUS  &kp BSPC
   &kp TAB  &none           &hm LGUI E       &kp LBKT              &kp RBKT                 &kp N4     &kp N5  &kp N6  &kp PLUS   &kp DEL
-  &none    &kp LEFT_SHIFT  &kp LS(LG(S))    &kp COMMA             &kp SEMICOLON            &kp N1     &kp N2  &kp N3  &kp DOT    &kp SLASH
+  &kp Z    &kp LEFT_SHIFT  &kp LS(LG(S))    &kp COMMA             &kp SEMICOLON            &kp N1     &kp N2  &kp N3  &kp DOT    &kp SLASH
                            &kp RIGHT_SHIFT  &trans                &kp LCTRL                &kp SPACE  &kp N0  &to 2
                 >;
 
