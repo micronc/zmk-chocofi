@@ -72,7 +72,7 @@
                 bindings = <
   &kp LS(EXCL)   &kp LS(AT)    &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)    &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH
   &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)   &kp LS(LPAR)  &kp LS(RPAR)     &kp LC(Z)  &none      &none     &kp SEMI  &kp SQT
-  &kp GRAVE      &none         &none          &none         &none            &none      &none      &none     &kp DOT   &kp FSLH
+  &kp TILDE      &none         &none          &none         &none            &none      &none      &none     &kp DOT   &kp FSLH
                                &none          &to 0         &kp SPACE        &kp SPACE  &none      &to 5
                 >;
 
