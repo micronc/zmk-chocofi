@@ -37,10 +37,10 @@
 
             numbers_layer {
                 bindings = <
-  &kp ESC  &none           &kp BSLH       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp N7     &kp N8  &kp N9  &kp MINUS  &kp BSPC
-  &kp TAB  &none           &hm LGUI E     &kp LBKT              &kp RBKT                 &kp N4     &kp N5  &kp N6  &kp PLUS   &kp DEL
-  &kp Z    &kp LEFT_SHIFT  &kp LS(LG(S))  &kp COMMA             &kp SEMICOLON            &kp N1     &kp N2  &kp N3  &kp DOT    &kp SLASH
-                           &kp LEFT_ALT   &trans                &kp LCTRL                &kp SPACE  &kp N0  &to 2
+  &kp ESC  &kp TILDE           &kp BSLH       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp N7     &kp N8  &kp N9  &kp MINUS  &kp BSPC
+  &kp TAB  &none               &hm LGUI E     &kp LBKT              &kp RBKT                 &kp N4     &kp N5  &kp N6  &kp PLUS   &kp DEL
+  &kp Z    &kp LC(LEFT_SHIFT)  &kp LS(LG(S))  &kp COMMA             &kp SEMICOLON            &kp N1     &kp N2  &kp N3  &kp DOT    &kp SLASH
+                               &kp LEFT_ALT   &trans                &kp LEFT_CONTROL         &kp SPACE  &kp N0  &to 2
                 >;
 
                 label = "NUBERS";
@@ -48,10 +48,10 @@
 
             navigation_layer {
                 bindings = <
-  &kp LG(L)  &none  &kp C_BRI_UP   &kp C_PLAY_PAUSE    &kp C_VOLUME_UP    &kp LC(LEFT)  &kp LC(RIGHT)  &kp HOME  &kp END   &kp BSPC
-  &kp TAB    &none  &kp C_BRI_DEC  &kp C_FAST_FORWARD  &kp C_VOL_DN       &none         &kp PG_UP      &none     &kp UP    &kp RIGHT
-  &kp LSHFT  &none  &none          &kp C_REWIND        &kp K_MUTE         &none         &kp PG_DN      &kp LEFT  &kp DOWN  &kp RET
-                    &kp LEFT_GUI   &to 0               &kp SPACE          &kp SPACE     &trans         &to 3
+  &kp LG(L)  &none  &kp C_BRI_UP   &kp C_PLAY_PAUSE    &kp C_VOLUME_UP    &kp LC(LEFT)      &kp LC(RIGHT)  &kp HOME  &kp END   &kp BSPC
+  &kp TAB    &none  &kp C_BRI_DEC  &kp C_FAST_FORWARD  &kp C_VOL_DN       &none             &kp PG_UP      &none     &kp UP    &kp RIGHT
+  &kp LSHFT  &none  &none          &kp C_REWIND        &kp K_MUTE         &kp LEFT_CONTROL  &kp PG_DN      &kp LEFT  &kp DOWN  &kp RET
+                    &kp LEFT_GUI   &to 0               &kp SPACE          &kp RIGHT_SHIFT   &trans         &to 3
                 >;
 
                 label = "NAVI";
