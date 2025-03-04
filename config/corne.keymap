@@ -26,7 +26,7 @@
             compatible = "zmk,keymap";
 
             QWERTY {
-                label = "DEFAULT";
+                label = "BEAST";
                 bindings = <
   &hm ESCAPE Q      &kp W             &kp E               &kp R  &kp T        &kp Y      &kp U  &kp I      &kp O       &kp P
   &kp A             &kp S             &kp D               &kp F  &kp G        &kp H      &kp J  &kp K      &kp L       &hm PIPE SQT
@@ -37,13 +37,13 @@
 
             numbers_layer {
                 bindings = <
-  &kp ESC  &kp TILDE           &kp BSLH       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp N7     &kp N8  &kp N9  &kp MINUS  &kp BSPC
-  &kp TAB  &none               &hm LGUI E     &kp LBKT              &kp RBKT                 &kp N4     &kp N5  &kp N6  &kp PLUS   &kp DEL
-  &kp Z    &kp LC(LEFT_SHIFT)  &kp LS(LG(S))  &kp COMMA             &kp SEMICOLON            &kp N1     &kp N2  &kp N3  &kp DOT    &kp SLASH
-                               &kp LEFT_ALT   &trans                &kp LEFT_CONTROL         &kp SPACE  &kp N0  &to 2
+  &kp ESC        &kp TILDE         &kp BSLH       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp N7     &kp N8  &kp N9  &kp MINUS  &kp BSPC
+  &kp TAB        &none             &hm LGUI E     &kp LBKT              &kp RBKT                 &kp N4     &kp N5  &kp N6  &kp PLUS   &kp DEL
+  &kp RIGHT_ALT  &kp LEFT_COMMAND  &kp LS(LG(S))  &kp COMMA             &kp SEMICOLON            &kp N1     &kp N2  &kp N3  &kp DOT    &kp SLASH
+                                   &kp LEFT_ALT   &trans                &kp LEFT_CONTROL         &kp SPACE  &kp N0  &to 2
                 >;
 
-                label = "NUBERS";
+                label = "NMBRS";
             };
 
             navigation_layer {
@@ -73,21 +73,10 @@
   &kp LS(EXCL)   &kp LS(AT)    &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)    &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH
   &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)   &kp LS(LPAR)  &kp LS(RPAR)     &kp LC(Z)  &none      &none     &kp SEMI  &kp SQT
   &kp TILDE      &none         &none          &none         &none            &none      &none      &none     &kp DOT   &kp FSLH
-                               &none          &to 0         &kp SPACE        &kp SPACE  &none      &to 5
+                               &none          &to 0         &kp SPACE        &kp SPACE  &none      &to 0
                 >;
 
                 label = "PUNCS";
-            };
-
-            CO-DH {
-                bindings = <
-  &hm ESCAPE Q      &kp W  &kp F          &kp P  &kp B                 &kp J      &kp L  &kp U      &kp Y    &kp SQT
-  &kp A             &kp R  &kp S          &kp T  &kp G                 &kp M      &kp N  &kp E      &kp I    &kp O
-  &hm LEFT_SHIFT Z  &kp X  &kp C          &kp D  &kp V                 &kp K      &kp H  &kp COMMA  &kp DOT  &hm FSLH RET
-                           &hm LCTRL TAB  &mo 1  &hm LEFT_ALT SPACE    &kp SPACE  &to 2  &to 3
-                >;
-
-                label = "COLEMAK";
             };
         };
     };
