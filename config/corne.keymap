@@ -28,7 +28,7 @@
             QWERTY {
                 label = "MAIN";
                 bindings = <
-  &hm ESCAPE Q      &kp W             &kp E      &kp R  &kp T                     &kp Y      &kp U  &kp I      &kp O       &kp P
+  &kp Q             &kp W             &kp E      &kp R  &kp T                     &kp Y      &kp U  &kp I      &kp O       &kp P
   &kp A             &kp S             &kp D      &kp F  &kp G                     &kp H      &kp J  &kp K      &kp L       &hm PIPE SQT
   &hm LEFT_SHIFT Z  &hm LEFT_SHIFT X  &kp C      &kp V  &kp B                     &kp N      &kp M  &kp COMMA  &kp PERIOD  &kp RETURN
                                       &kp LCTRL  &mo 1  &hm LEFT_COMMAND SPACE    &kp SPACE  &mo 2  &to 3
